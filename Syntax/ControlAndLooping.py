@@ -41,10 +41,39 @@ else:
 numberOne = int(input("Enter first number to swap: "))
 numberTwo = int(input("Enter second number to swap: "))
 print(f"Before swapping: numberOne = {numberOne}, numberTwo = {numberTwo}")
+sum = numberOne + numberTwo
+numberOne = sum - numberOne
+numberTwo = sum - numberTwo
+print(f"After swapping: numberOne = {numberOne}, numberTwo = {numberTwo}")
 #Using a temporary variable to swap
 temp = numberOne
 numberOne = numberTwo
 numberTwo = temp
 print(f"After swapping: numberOne = {numberOne}, numberTwo = {numberTwo}")
 
-        
+#fibonacci series using loops
+# Fibonacci series is a series where the next term is the sum of the previous two terms
+# The series starts with 0 and 1
+#For example, the first 10 terms are: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+for i in range (0,21):
+    a, b = 0, 1
+    fibonacci_series = []
+    while a <= i:
+        fibonacci_series.append(a)
+        a, b = b, a + b
+    print(f"Fibonacci series up to {i}: {fibonacci_series}")    
+
+list_fib = [0,1] 
+for i in range(1,21):
+   list_fib.append(list_fib[i-1] + list_fib[i])
+print(f"Fibonacci series up to 20 using list: {list_fib}")
+
+#factorial of a number using loops
+# Factorial of a number n is the product of all positive integers less than or equal to n
+# It is denoted by n!
+# For example, 5! = 5 x 4 x 3 x 2 x 1 = 120
+num_factorial = int(input("Enter a number to calculate its factorial: "))
+factorial = 1
+for i in range(1, num_factorial + 1):
+    factorial *= i  # same as factorial = factorial * i
+print(f"The factorial of {num_factorial} is {factorial}")   
